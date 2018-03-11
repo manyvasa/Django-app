@@ -1,0 +1,53 @@
+    {% load staticfiles %}
+    <DOCTYPE Html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link href="https://fonts.googleapis.com/css?family=Caveat:700|Russo+One|Roboto" rel="stylesheet">
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <title>>MonterX</title>
+        </head>
+        <body>
+            <header>
+                <div class="row">
+                    <div class="header-logo">
+                        <div class="header-logo__text">
+                            <a href="/">MonterX</a>
+                        </div>
+                    </div>
+                    <div class="header-menu__icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <nav class="header-menu">
+                        <ul class="header-menu__menu">
+                            <li><a href="">О нас</a></li>
+                            <li><a href="">Переславь</a></li>
+                            <li><a href="">Драмчик</a></li>
+                            <li><a href="">Сигаретка</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header-profile">121212
+                        {% if user.is_authenticated %}
+                        Name:{{ user.username }} <br>
+                        <a href="{% url 'post_new' %}">post_new</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="row">
+                    {% block post_list %}
+                    {% endblock %}
+                </div>
+            </div>
+            <footer>
+                <div class="row">foot-er..
+                </div>
+            </footer>
+        </body>
+    </html>

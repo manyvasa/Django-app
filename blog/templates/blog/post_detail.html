@@ -1,0 +1,17 @@
+    {% extends 'blog/base.html' %}
+
+    {% block post_list %}
+        <div class="post">
+            <div class="post-prolog">
+                <div class="post-prolog__title">
+                    <h2><a href="{% url 'post_detail' pk=post.pk %}" class="link--upper link--dec">{{ post.title }}</a></h2>
+                </div>
+                <div class="post-prolog__date">
+                    {{ post.published_date }}
+                </div>
+            </div>
+            <div class="post-prew">
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        </div>
+    {% endblock %}

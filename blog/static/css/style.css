@@ -1,0 +1,202 @@
+/* line 16, ../../sass/style.scss */
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+/* line 21, ../../sass/style.scss */
+header {
+  background-color: #443c3c;
+  height: 100px;
+  border-bottom: 5px solid black;
+  margin-bottom: 15px;
+}
+/* line 26, ../../sass/style.scss */
+header .row {
+  align-items: center;
+  justify-content: space-around;
+}
+/* line 30, ../../sass/style.scss */
+header .header-logo {
+  width: 200px;
+  height: 100px;
+}
+/* line 33, ../../sass/style.scss */
+header .header-logo .header-logo__text {
+  display: block;
+  position: relative;
+  top: 40px;
+}
+/* line 37, ../../sass/style.scss */
+header .header-logo .header-logo__text a {
+  font-family: 'Caveat', cursive;
+  text-decoration: none;
+  color: white;
+  font-size: 50px;
+}
+/* line 44, ../../sass/style.scss */
+header .header-menu {
+  width: 348px;
+  height: 100px;
+}
+/* line 47, ../../sass/style.scss */
+header .header-menu .header-menu__menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  top: 63px;
+}
+/* line 53, ../../sass/style.scss */
+header .header-menu .header-menu__menu li {
+  display: inline-block;
+  margin-right: -6px;
+}
+/* line 56, ../../sass/style.scss */
+header .header-menu .header-menu__menu li :hover {
+  text-decoration: underline;
+  color: #4d5f25;
+}
+/* line 61, ../../sass/style.scss */
+header .header-menu .header-menu__menu a {
+  font-family: 'Caveat', cursive;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  background-color: white;
+  padding: 5px;
+  border-top: 4px solid black;
+}
+/* line 71, ../../sass/style.scss */
+header .header-profile {
+  width: 120px;
+  height: 100px;
+  background-color: grey;
+}
+
+/* line 79, ../../sass/style.scss */
+.header-menu__icon {
+  display: none;
+  width: 45px;
+  height: 35px;
+  position: relative;
+}
+/* line 84, ../../sass/style.scss */
+.header-menu__icon span {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 100%;
+  background: white;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+/* line 95, ../../sass/style.scss */
+.header-menu__icon span:nth-child(1) {
+  top: 0px;
+}
+/* line 96, ../../sass/style.scss */
+.header-menu__icon span:nth-child(2), .header-menu__icon span:nth-child(3) {
+  top: 13px;
+}
+/* line 97, ../../sass/style.scss */
+.header-menu__icon span:nth-child(4) {
+  top: 26px;
+}
+
+/* line 102, ../../sass/style.scss */
+.row {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* line 109, ../../sass/style.scss */
+.content {
+  min-height: 75%;
+}
+/* line 111, ../../sass/style.scss */
+.content .row {
+  flex-direction: column;
+}
+
+/* line 116, ../../sass/style.scss */
+.post {
+  border-top: 5px solid #443c3c;
+  padding: 10px 20px 5px 10px;
+  margin-bottom: 15px;
+  background-color: white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+/* line 125, ../../sass/style.scss */
+.post-prolog__title h2 {
+  margin: 0;
+}
+/* line 128, ../../sass/style.scss */
+.post-prolog__title a {
+  color: #443c3c;
+  font-family: 'Russo One', sans-serif;
+}
+/* line 129, ../../sass/style.scss */
+.post-prolog__title a:hover {
+  color: #4d5f25;
+}
+
+/* line 135, ../../sass/style.scss */
+.post-prolog__date {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+/* line 140, ../../sass/style.scss */
+.post-prew p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* line 146, ../../sass/style.scss */
+.post-epilog__more {
+  padding-left: 5px;
+}
+/* line 148, ../../sass/style.scss */
+.post-epilog__more a {
+  color: #851f10;
+}
+/* line 150, ../../sass/style.scss */
+.post-epilog__more a:hover {
+  color: #4d5f25;
+}
+
+/* line 155, ../../sass/style.scss */
+footer {
+  background-color: #443c3c;
+  border-top: 5px solid black;
+  height: 100px;
+}
+
+/* media */
+@media (max-width: 866px) {
+  /* line 164, ../../sass/style.scss */
+  .header-menu, .header-profile {
+    display: none;
+  }
+}
+
+@media (max-width: 866px) {
+  /* line 168, ../../sass/style.scss */
+  .row {
+    width: 95%;
+  }
+}
+
+@media (max-width: 866px) {
+  /* line 174, ../../sass/style.scss */
+  .header-menu__icon {
+    display: block;
+  }
+}

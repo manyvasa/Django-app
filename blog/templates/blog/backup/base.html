@@ -1,0 +1,57 @@
+    {% load staticfiles %}
+    <DOCTYPE Html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link href="https://fonts.googleapis.com/css?family=Caveat:700|Russo+One|Roboto" rel="stylesheet">
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <title>>MonterX</title>
+        </head>
+        <body>
+
+                <div class="header">
+                    <div class="row">
+                        <div class="logo">
+                           <!--<div class="logo_icon">
+                                <img src="{% static 'img/logo.png' %}" height="40" width="40">
+                            </div> -->
+                            <div class="logo_text">
+                                <a href="/">MonterX</a>
+                            </div>
+                        </div>
+                        <div class="main_menu">
+                            <ul class="menu">
+                                <li><a href="">О нас</a></li>
+                                <li><a href="">Переславь</a></li>
+                                <li><a href="">Драмчик</a></li>
+                                <li><a href="">Сигаретка</a></li>
+                            </ul>
+                        </div>
+                        <div class="profile_menu">
+                            {% if user.is_authenticated %}
+                            Name:{{ user.username }} <br>
+                            <a href="{% url 'post_new' %}">post_new</a>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="block left"></div>
+                    <div class="block right"></div>
+                </div>
+                <div class="content">
+                    <div class="row">
+                            {% block post_list %}
+                            {% endblock %}
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="row">
+                        foot-er..
+                    </div>
+
+                </div>
+        </body>
+    </html>
