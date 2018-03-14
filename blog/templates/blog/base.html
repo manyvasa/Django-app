@@ -8,46 +8,69 @@
             <link rel="stylesheet" href="{% static 'css/style.css' %}">
             <title>>MonterX</title>
         </head>
-        <body>
-            <header>
-                <div class="row">
-                    <div class="header-logo">
-                        <div class="header-logo__text">
-                            <a href="/">MonterX</a>
+        <body class="layout">
+            <div class="layout__viewport">
+                <div class="layout__primary">
+                    <header>
+                        <div class="row">
+                            <div class="header-logo">
+                                <div class="header-logo__text">
+                                    <a href="/">MonterX</a>
+                                </div>
+                            </div>
+                            <div class="header-menu__icon" id="btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <nav class="header-menu">
+                                <ul class="header-menu__menu">
+                                    <li><a href="">О нас</a></li>
+                                    <li><a href="">Переславь</a></li>
+                                    <li><a href="">Драмчик</a></li>
+                                    <li><a href="">Сигаретка</a></li>
+                                </ul>
+                            </nav>
+                            <div class="header-profile">121212
+                                {% if user.is_authenticated %}
+                                Name:{{ user.username }} <br>
+                                <a href="{% url 'post_new' %}">post_new</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </header>
+
+                    <div class="content">
+                        <div class="row">
+                            {% block post_list %}
+                            {% endblock %}
                         </div>
                     </div>
-                    <div class="header-menu__icon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <nav class="header-menu">
-                        <ul class="header-menu__menu">
+                    <footer>
+                        <div class="row">foot-er..
+                        </div>
+                    </footer>
+                </div>
+                <div class="layout__nav-mobile">
+                    <div class="nav-mobile__box">
+                        <div class="nav-mobile__head">Главное меню</div>
+                        <ul class="nav-mobile__menu">
                             <li><a href="">О нас</a></li>
                             <li><a href="">Переславь</a></li>
                             <li><a href="">Драмчик</a></li>
                             <li><a href="">Сигаретка</a></li>
                         </ul>
-                    </nav>
-                    <div class="header-profile">121212
+                    </div>
+                    <div class="nav-mobile__box">
+                        <div class="nav-mobile__head">Личка-нах..</div>
                         {% if user.is_authenticated %}
                         Name:{{ user.username }} <br>
                         <a href="{% url 'post_new' %}">post_new</a>
                         {% endif %}
                     </div>
                 </div>
-            </header>
-
-            <div class="content">
-                <div class="row">
-                    {% block post_list %}
-                    {% endblock %}
-                </div>
             </div>
-            <footer>
-                <div class="row">foot-er..
-                </div>
-            </footer>
+        <script src="{% static 'js/btn_hamburger.js' %}"></script>
         </body>
     </html>
